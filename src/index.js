@@ -2,6 +2,9 @@ const { response } = require("express");
 const express = require("express");
 const {v4: uuidv4 } = require("uuid");
 
+const PORT = 3333;
+const HOST = '0.0.0.0';
+
 const app = new express();
 
 app.use(express.json());
@@ -149,5 +152,6 @@ app.get("/balance", verifyIfExistsAcountCPF, (request, response) => {
 
     return response.json(balance);
 })
-app.listen(3333);
+
+app.listen(PORT, HOST);
 
